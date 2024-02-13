@@ -34,6 +34,7 @@ async function run() {
         // get all the categories
         app.get("/allcategory", async (req, res) => {
             const category = await Category_collection.find().toArray();
+            // console.log(category);
             res.send(category)
 
         })
