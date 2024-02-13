@@ -29,14 +29,16 @@ async function run() {
         // Send a ping to confirm a successful connection
 
         // Database collection's Name
-        const dua_collection = client.db("category").collection("xlsx - First Sheet");
+        const Category_collection = client.db("category").collection("xlsx - First Sheet");
 
-        // get all the users
-        app.get("/alldua", async (req, res) => {
-            const duas = await dua_collection.find().toArray();
-            res.send(duas)
+        // get all the categories
+        app.get("/allcategory", async (req, res) => {
+            const category = await Category_collection.find().toArray();
+            res.send(category)
 
         })
+
+       
 
         await client.db("admin").command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
